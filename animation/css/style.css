@@ -18,8 +18,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-perspective: 200px;
-          perspective: 200px;
 }
 
 .parent {
@@ -27,12 +25,6 @@ body {
   height: 100px;
   background-color: #ccc;
   border-radius: 16px;
-  -webkit-perspective: 200px;
-          perspective: 200px;
-  -webkit-transform: rotateY(50deg);
-          transform: rotateY(50deg);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
 }
 
 .box {
@@ -40,13 +32,35 @@ body {
   height: 100px;
   background-color: lightgreen;
   border-radius: 16px;
-  /*transform: rotate(20deg);
-    transform-origin: 0% 0%;
-    transition: all 0.5s ease;
-    &:hover {
-        transform: rotate(180deg);
-    }*/
-  -webkit-transform: rotateX(60deg);
-          transform: rotateX(60deg);
+  -webkit-animation-name: box;
+          animation-name: box;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: alternate;
+          animation-fill-mode: alternate;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@-webkit-keyframes box {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 100px;
+  }
+}
+
+@keyframes box {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 100px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
