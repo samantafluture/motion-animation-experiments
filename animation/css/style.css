@@ -25,6 +25,16 @@ body {
   height: 100px;
   background-color: #ccc;
   border-radius: 16px;
+  -webkit-perspective: 200px;
+          perspective: 200px;
+  -webkit-transform: rotateY(30deg);
+          transform: rotateY(30deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: parent 15s ease infinite alternate;
+          animation: parent 15s ease infinite alternate;
+  -webkit-animation: change-color 0.5s ease-out infinite alternate;
+          animation: change-color 0.5s ease-out infinite alternate;
 }
 
 .box {
@@ -32,35 +42,75 @@ body {
   height: 100px;
   background-color: lightgreen;
   border-radius: 16px;
-  -webkit-animation-name: box;
-          animation-name: box;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-fill-mode: alternate;
-          animation-fill-mode: alternate;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
+  /*animation-name: box;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: alternate;
+    animation-delay: 2s;
+    animation-timing-function: ease;*/
+  -webkit-animation: box 0.5s ease infinite alternate;
+          animation: box 0.5s ease infinite alternate;
 }
 
 @-webkit-keyframes box {
   0% {
-    width: 0px;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
   }
   100% {
-    width: 100px;
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
   }
 }
 
 @keyframes box {
   0% {
-    width: 0px;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
   }
   100% {
-    width: 100px;
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+}
+
+@-webkit-keyframes change-color {
+  0% {
+    background-color: #a883cb;
+  }
+  100% {
+    background-color: #4f1d7e;
+  }
+}
+
+@keyframes change-color {
+  0% {
+    background-color: #a883cb;
+  }
+  100% {
+    background-color: #4f1d7e;
+  }
+}
+
+@-webkit-keyframes parent {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@keyframes parent {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
   }
 }
 /*# sourceMappingURL=style.css.map */
